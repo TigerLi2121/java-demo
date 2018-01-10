@@ -1,4 +1,4 @@
-package com.mm.designpattern.factory.factorymethod;
+package com.mm.designpattern.factory.ordinaryfactory;
 
 /**
  * @author: shmily

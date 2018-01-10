@@ -1,7 +1,7 @@
-package com.mm.designpattern.factory.factorymethod;
+package com.mm.designpattern.factory.ordinaryfactory;
 
 /**
- * 工厂模式
+ * 普通工厂模式
  * @author: shmily
  * @date: Create in 2017/12/25 14:32
  **/

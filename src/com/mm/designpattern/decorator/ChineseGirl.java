@@ -1,6 +1,10 @@
 package com.mm.designpattern.decorator;
 
-public class ChineseGirl extends Girl {
+/**
+ * @author Shmily
+ * @date 2018-01-08 08:08:08
+ */
+public class ChineseGirl extends AbstractGirl {
 
     public ChineseGirl(){
         description = "+ChineseGirl";

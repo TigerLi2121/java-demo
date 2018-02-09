@@ -1,10 +1,14 @@
 package com.mm.designpattern.decorator;
 
-public class Tall extends GirlDecorator {
+/**
+ * @author Shmily
+ * @date 2018-01-08 08:08:08
+ */
+public class Tall extends AbstractGirlDecorator {
 
-    private Girl girl;
+    private AbstractGirl girl;
 
-    public Tall(Girl girl){
+    public Tall(AbstractGirl girl){
         this.girl = girl;
     }
 

@@ -1,6 +1,10 @@
 package com.mm.designpattern.decorator;
 
-public abstract class Girl {
+/**
+ * @author Shmily
+ * @date 2018-01-08 08:08:08
+ */
+public abstract class AbstractGirl {
     String description = "no particular";
 
     public String getDescription(){

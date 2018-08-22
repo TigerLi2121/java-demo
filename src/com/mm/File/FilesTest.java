@@ -1,5 +1,6 @@
 package com.mm.File;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -16,7 +17,7 @@ import java.util.List;
  **/
 public class FilesTest {
     public static void main(String[] args) {
-        Path path = Paths.get("file/demo/demo.txt");
+        /*Path path = Paths.get("file/demo/demo.txt");
         if (!Files.exists(path)) {
             try {
                 Path dirPath = Files.createDirectories(Paths.get("file/demo"));
@@ -43,6 +44,8 @@ public class FilesTest {
             System.out.println("FILE SIZE:" + Files.getAttribute(path, "size"));
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
+        File file = new File("d:/aa.js");
+        System.out.println(file.exists());
     }
 }

@@ -16,9 +16,7 @@ public class FixedThreadPool {
     public static void main(String[] args) {
         for (int i = 0; i < 5; i++) {
             final int a = i;
-            executorService.submit(() -> {
-                out(a);
-            });
+            executorService.submit(() ->  out(a));
         }
         executorService.shutdown();
     }

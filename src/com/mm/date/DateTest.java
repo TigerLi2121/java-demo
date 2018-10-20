@@ -1,10 +1,10 @@
 package com.mm.date;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Period;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -30,11 +30,12 @@ public class DateTest {
         System.out.println(DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS").format(LocalDateTime.now()));
         System.out.println("==================================");
         LocalDateTime nowDate = LocalDateTime.now();
-        nowDate = nowDate.plusDays(1);
+        nowDate = nowDate.plusDays(0);
         nowDate = nowDate.plusHours(2);
         System.out.println(nowDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
         System.out.println(DateTimeFormatter.ofPattern("yyyy-w").format(LocalDateTime.now()));
         System.out.println(DateTimeFormatter.ofPattern("yyyyMM").format(LocalDateTime.now().plusMonths(-1)));
+        System.out.println("t:"+DateTimeFormatter.ofPattern("yyyy-MM-dd").format(LocalDateTime.now().plusDays(-1)));
         System.out.println("==================================");
         String birthdayStr1 = "2008-08-08";
         String birthdayStr2 = "2008-08-09";
@@ -48,5 +49,16 @@ public class DateTest {
         System.out.println(LocalDate.now().getYear());
         System.out.println(LocalDate.now().getMonthValue());
         System.out.println(LocalDate.now().getDayOfMonth());
+        System.out.println("==================================");
+        LocalDateTime localDateTime = LocalDateTime.parse("2018-08-01 00:00:00", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        System.out.println(localDateTime.plusMonths(-1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+        System.out.println("==================================");
+        LocalDate thisWeekFirstDay = LocalDate.now().with(DayOfWeek.MONDAY);
+        System.out.println(thisWeekFirstDay.toString());
+        System.out.println("==================================");
+        String lastWeekFirstDay = thisWeekFirstDay.plusDays(-7).toString();
+        String lastWeekEndDay = thisWeekFirstDay.plusDays(-1).toString();
+        System.out.println("lastWeekFirstDay:"+lastWeekFirstDay);
+        System.out.println("lastWeekEndDay:"+lastWeekEndDay);
     }
 }

@@ -1,7 +1,10 @@
 package com.mm.File;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,7 +19,7 @@ import java.util.List;
  * @date: 2018/2/9 10:33
  **/
 public class FilesTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         /*Path path = Paths.get("file/demo/demo.txt");
         if (!Files.exists(path)) {
             try {
@@ -45,7 +48,7 @@ public class FilesTest {
         } catch (IOException e) {
             e.printStackTrace();
         }*/
-        File file = new File("d:/aa.js");
-        System.out.println(file.exists());
+        URL file = new URL("https://data.caidouenglish.com/2016/07/31/72/cd/72cd387d2c483a5ddf4b72ecc95648ff.mp3");
+        System.out.println(file);
     }
 }

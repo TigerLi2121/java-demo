@@ -3,6 +3,7 @@ package com.mm.date;
 import java.text.SimpleDateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Calendar;
@@ -60,5 +61,16 @@ public class DateTest {
         String lastWeekEndDay = thisWeekFirstDay.plusDays(-1).toString();
         System.out.println("lastWeekFirstDay:"+lastWeekFirstDay);
         System.out.println("lastWeekEndDay:"+lastWeekEndDay);
+        System.out.println("==================================");
+        LocalDate playerDate = LocalDate.from(DateTimeFormatter.ofPattern("yyyy-MM-dd").parse("2018-02-21"));
+        long years = ChronoUnit.YEARS.between(playerDate, nowDate);
+        long months = ChronoUnit.MONTHS.between(playerDate, nowDate);
+        System.out.println(years);
+        System.out.println(months);
+        System.out.println("==================================");
+        //本月的最后一天
+        System.out.println("本月的第一天"+LocalDate.now().with(TemporalAdjusters.firstDayOfMonth()));
+        System.out.println("本月的最后一天"+LocalDate.now().with(TemporalAdjusters.lastDayOfMonth()));
     }
+
 }

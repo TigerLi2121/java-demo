@@ -24,6 +24,7 @@ public class DateTest {
         Date date = calendar.getTime();
         System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date));
         System.out.println("==================================");
+        System.out.println(LocalDate.now().toString());
         System.out.println(LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE));
         System.out.println(LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         System.out.println(DateTimeFormatter.ofPattern("uuuuMMdd").format(LocalDate.now()));

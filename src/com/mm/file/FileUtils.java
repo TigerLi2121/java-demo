@@ -1,4 +1,4 @@
-package com.mm.File;
+package com.mm.file;
 
 import java.io.*;
 import java.nio.file.*;

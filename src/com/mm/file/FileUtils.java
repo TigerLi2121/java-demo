@@ -4,7 +4,7 @@ import java.io.*;
 import java.nio.file.*;
 
 /**
- * @author: Shmily
+ * @author: shmily
  * @date: 2018/2/9 13:43
  **/
 public class FileUtils {

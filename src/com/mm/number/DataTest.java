@@ -17,10 +17,10 @@ public class DataTest {
 //        DecimalFormat df = new DecimalFormat("0.00");
 //        System.out.println(df.format((double)5/3));
 
-//        DataTest.getDate();
-//        DataTest.getDate(null);
-//        DataTest.getDate(null, null);
-//        DataTest.getDate("a");
+//        Data1.getDate();
+//        Data1.getDate(null);
+//        Data1.getDate(null, null);
+//        Data1.getDate("a");
 //        Integer a = 44;
 //        System.out.println(a.intValue() > 0);
 //        String[] strings = null;

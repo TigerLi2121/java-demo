@@ -2,7 +2,7 @@ package com.mm.designpattern.decorator;
 
 /**
  * 装饰者模式
- * @author Shmily
+ * @author shmily
  * @date 2018-01-08 08:08:08
  */
 public class DecotatorPatternDemo {

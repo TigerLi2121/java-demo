@@ -2,7 +2,7 @@ package com.mm.designpattern.adapter;
 
 /**
  * 三相转两相适配器
- * @author Shmily
+ * @author shmily
  */
 public class TwoPlugAdapter implements ThreePlugIf {
 

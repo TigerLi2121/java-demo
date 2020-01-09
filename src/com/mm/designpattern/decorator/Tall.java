@@ -1,7 +1,7 @@
 package com.mm.designpattern.decorator;
 
 /**
- * @author Shmily
+ * @author shmily
  * @date 2018-01-08 08:08:08
  */
 public class Tall extends AbstractGirlDecorator {

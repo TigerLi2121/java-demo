@@ -5,7 +5,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * @author Shmily
+ * @author shmily
  * @date 2018-01-08 08:08:08
  */
 public class ServerTest {

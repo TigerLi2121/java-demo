@@ -5,7 +5,7 @@ import java.net.Socket;
 import java.util.Scanner;
 
 /**
- * @author Shmily
+ * @author shmily
  * @date 2018-01-08 08:08:08
  */
 public class ClientTest {

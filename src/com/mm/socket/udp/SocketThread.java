@@ -3,7 +3,7 @@ package com.mm.socket.udp;
 import java.net.DatagramPacket;
 
 /**
- * @author Shmily
+ * @author shmily
  * @date 2018-01-08 08:08:08
  */
 public class SocketThread extends Thread {

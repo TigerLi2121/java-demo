@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
- * @author: Shmily
+ * @author: shmily
  * @date: 2018/2/9 9:51
  **/
 public class DateTest {

@@ -7,7 +7,7 @@ import java.net.InetSocketAddress;
 import java.net.SocketException;
 
 /**
- * @author Shmily
+ * @author shmily
  * @date 2018-01-08 08:08:08
  */
 public class ServerTest {

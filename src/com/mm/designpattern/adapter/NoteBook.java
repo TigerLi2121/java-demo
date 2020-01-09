@@ -2,7 +2,7 @@ package com.mm.designpattern.adapter;
 
 /**
  * 适配器模式
- * @author Shmily
+ * @author shmily
  */
 public class NoteBook {
 

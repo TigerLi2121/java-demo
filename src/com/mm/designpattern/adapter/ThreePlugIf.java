@@ -2,7 +2,7 @@ package com.mm.designpattern.adapter;
 
 /**
  * 三相插头接口
- * @author Shmily
+ * @author shmily
  */
 public interface ThreePlugIf {
 

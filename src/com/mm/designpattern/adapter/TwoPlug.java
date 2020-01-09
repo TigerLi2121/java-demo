@@ -2,7 +2,7 @@ package com.mm.designpattern.adapter;
 
 /**
  * 两相插头
- * @author Shmily
+ * @author shmily
  */
 public class TwoPlug {
 

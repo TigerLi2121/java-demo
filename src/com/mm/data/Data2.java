@@ -18,7 +18,6 @@ public class Data2 {
         Data2 d = new Data2();
         d.show("a");
         d.show("b", "c");
-
         d.show("b", "c", "d");
     }
 }

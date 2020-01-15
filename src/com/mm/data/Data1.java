@@ -22,7 +22,6 @@ public class Data1 {
         Integer b = new Integer(12);
         t.str(a);
         t.ing(b);
-
         System.out.println(a);
         System.out.println(b);
     }

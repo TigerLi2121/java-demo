@@ -11,7 +11,8 @@ import java.util.concurrent.*;
  */
 public class TotalThread {
 
-    private final static ExecutorService pool = Executors.newFixedThreadPool(20);
+    static ThreadPoolExecutor pool = new ThreadPoolExecutor(20, 200,
+            60, TimeUnit.SECONDS, new LinkedBlockingQueue<>(), r -> new Thread(r, "pool"));
 
     public static int incre(int i){
         i += 1;

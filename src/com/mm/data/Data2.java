@@ -8,16 +8,14 @@ import java.util.Arrays;
  */
 public class Data2 {
 
-    public void show(String a, String... as) {
+    public static void show(String a) {
+        a += "as";
         System.out.println(a);
-        Arrays.asList(as).forEach(s -> System.out.print(s));
-        System.out.println();
     }
 
     public static void main(String[] args) {
-        Data2 d = new Data2();
-        d.show("a");
-        d.show("b", "c");
-        d.show("b", "c", "d");
+        String a = "cc";
+        show(a);
+        System.out.println(a);
     }
 }

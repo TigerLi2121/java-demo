@@ -12,12 +12,16 @@ import java.util.List;
  */
 public class ListTest {
     public static void main(String[] args) {
-        String s = "1,2,3,4,5,6";
-        Arrays.asList(s.split(",")).forEach(System.out::println);
-        List<String> ss = new ArrayList<>();
-        ss.add("123");
-        ss.add(0, "456");
-        ss.sort(null);
-        ss.forEach(System.out::println);
+//        String s = "1,2,3,4,5,6";
+//        Arrays.asList(s.split(",")).forEach(System.out::println);
+//        List<String> ss = new ArrayList<>();
+//        ss.add("123");
+//        ss.add(0, "456");
+////        ss.sort(null);
+//        ss.forEach(System.out::println);
+//        List<String> list = Arrays.asList("1,2,3,4,5,6".split(split","));
+        List<String> list = new ArrayList<>();
+        list.add("12");
+        System.out.println(list.contains(null));
     }
 }

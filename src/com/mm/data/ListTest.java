@@ -22,6 +22,6 @@ public class ListTest {
 //        List<String> list = Arrays.asList("1,2,3,4,5,6".split(split","));
         List<String> list = new ArrayList<>();
         list.add("12");
-        System.out.println(list.contains(null));
+        System.out.println(list.contains("12"));
     }
 }

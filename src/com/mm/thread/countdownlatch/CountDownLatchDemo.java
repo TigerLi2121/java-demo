@@ -10,11 +10,20 @@ import java.util.concurrent.CountDownLatch;
  **/
 public class CountDownLatchDemo {
     public static void main(String[] args) {
-        CountDownLatch countDownLatch = new CountDownLatch(5);
-        PrintHello printHello = new PrintHello(countDownLatch);
+        int count = 5;
+        CountDownLatch countDownLatch = new CountDownLatch(count);
         long start = System.currentTimeMillis();
-        for (int i = 0; i < 6; i++) {
-            new Thread(printHello).start();
+        for (int i = 0; i < count; i++) {
+            int finalI = i;
+            new Thread(() -> {
+                try {
+                    System.out.println(Thread.currentThread().getName()+":"+ finalI);
+                    Thread.sleep(1000);
+                } catch (Exception e) {
+                } finally {
+                    countDownLatch.countDown();
+                }
+            }).start();
         }
         try {
             countDownLatch.await();

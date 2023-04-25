@@ -1,39 +1,60 @@
 package com.mm.thread.threadpool;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.concurrent.*;
 
 /**
  * 定长线程池
  * 可控制线程最大并发数，超出的线程会在队列中等待。
+ *
  * @author: shmily
  * @date: Create in 2017/12/26 17:23
  **/
 public class FixedThreadPool {
-    private final static ExecutorService executorService = Executors.newFixedThreadPool(3);
+
+    public static volatile int stop = 0;
 
     public static void main(String[] args) {
-        for (int i = 0; i < 5; i++) {
-            final int a = i;
-            executorService.submit(() ->  out(a));
+        int n = 5,t = 20;
+         ExecutorService es = Executors.newFixedThreadPool(n);
+        List<Future> fs = new ArrayList<>();
+        long s = System.currentTimeMillis();
+        for (int i = 0; i < t; i += n) {
+            long s1 = System.currentTimeMillis();
+            int jc = i + n;
+            jc = jc >= t ? t : jc;
+            for (int j = i; j < jc ; j++) {
+                final int a = j;
+                Future<?> f = es.submit(() -> {
+                    System.out.println(Thread.currentThread().getName()+":" +a);
+                    if (a == 3 || a == 4) {
+                        stop ++;
+                    }
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+
+                    }
+                });
+                fs.add(f);
+            }
+            for (Future f : fs) {
+                try {
+                    f.get();
+                } catch (Exception e) {
+                    es.shutdownNow();
+                }
+            }
+            fs.clear();
+            System.out.println(i +":"+ (System.currentTimeMillis() - s1));
+            if (stop == 3) {
+                break;
+            }
         }
-        executorService.shutdown();
-    }
 
-    private static void out(int a){
-        System.out.println(Thread.currentThread().getId()+"-"+Thread.currentThread().getName()+"-"+a);
-        ThreadPoolExecutor tpe = ((ThreadPoolExecutor) executorService);
-        int queueSize = tpe.getQueue().size();
-        System.out.println("当前排队线程数："+ queueSize);
-
-        int activeCount = tpe.getActiveCount();
-        System.out.println("当前活动线程数："+ activeCount);
-
-        long completedTaskCount = tpe.getCompletedTaskCount();
-        System.out.println("执行完成线程数："+ completedTaskCount);
-
-        long taskCount = tpe.getTaskCount();
-        System.out.println("总线程数："+ taskCount);
+        System.out.println("total:"+ (System.currentTimeMillis() - s));
+        es.shutdown();
     }
 }
